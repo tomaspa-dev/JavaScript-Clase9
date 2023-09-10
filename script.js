@@ -41,8 +41,60 @@ const restaurant = {
       `order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${address} at ${time}`
     );
   },
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1} and ${ing2} and ${ing3}`
+    );
+  },
 };
 
+const arr = [7, 8, 9];
+const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
+console.log(badNewArray);
+
+const newArr = [1, 2, ...arr];
+console.log(newArr);
+console.log(...newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Gnocci'];
+console.log(newMenu);
+
+//Copy array
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+//Join 2 arrays
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menu);
+
+// Iterables: arrays, strings, maps, sets. NOT objects
+const str = 'Jonas';
+const letters = [...str, '', '$.'];
+console.log(letters);
+console.log(...str);
+// console.log(`${...str} Schmedtmann`);
+
+//Real-world example
+const ingredients = [
+  // prompt("Let's make pasta! Ingridient 1?"),
+  // prompt("Let's make pasta! Ingridient 2?"),
+  // prompt("Let's make pasta! Ingridient 3?"),
+];
+console.log(ingredients);
+
+restaurant.orderPasta(...ingredients);
+
+//Objects
+const newRestaurant = { foundedIn: 1998, ...restaurant, founder: 'Giuseppe' };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = 'Ristorante Roma';
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+// Destructuring Objects
+/* 
 restaurant.orderDelivery({
   time: '22:30',
   address: 'Via del Sole, 21',
@@ -79,9 +131,7 @@ console.log(a, b);
 const {
   fri: { open: o, close: c },
 } = openingHours;
-console.log(o, c);
-
-// Destructuring Objects
+console.log(o, c); */
 
 // Destructuring Arrays
 /* const arr = [2, 3, 4];
