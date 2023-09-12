@@ -52,6 +52,38 @@ const restaurant = {
   },
 };
 
+//Use any data type, return any data type, short-circuiting.
+console.log('-----OR-----');
+
+console.log(3 || 'Jonas');
+console.log('' || 'Jonas');
+console.log(true || 0);
+console.log(undefined || null);
+
+console.log(undefined || 0 || '' || null || 'Hello' || 23);
+
+// restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+console.log(guest1);
+
+const guest2 = restaurant.numGuests || 10;
+console.log(guest2);
+
+console.log('-----AND-----');
+console.log(0 && 'Jonas');
+console.log(7 && 'Jonas');
+
+console.log('Hello' && 23 && null && 'Jonas');
+
+//Practical example
+if (restaurant.orderPizza) {
+  restaurant.orderPizza('mushrooms', 'spinach');
+}
+
+restaurant.orderPizza && restaurant.orderPizza('mushrooms', 'spinach');
+
+//
+/* 
 // 1. Destructuring
 
 // SPREAD, because on RIGHT side of =
@@ -95,7 +127,7 @@ const x = [23, 5, 7];
 add(...x);
 
 restaurant.orderPizza('muhsrooms', 'onion', 'olives', 'spinach');
-restaurant.orderPizza('muhsrooms');
+restaurant.orderPizza('muhsrooms'); */
 
 /* 
 ////////////////////////////////
