@@ -48,6 +48,8 @@ const restaurant = {
   },
 };
 
+// 1. Destructuring
+
 // SPREAD, because on RIGHT side of =
 const arr = [1, 2, ...[3, 4]];
 
@@ -61,6 +63,30 @@ const [pizza, , risotto, ...otherFood] = [
   ...restaurant.starterMenu,
 ];
 console.log(pizza, risotto, otherFood);
+
+//Objects
+const { sat, ...wekdays } = restaurant.openingHours;
+console.log(wekdays);
+
+const { sat: weekend, ..._weekdays } = restaurant.openingHours;
+console.log(weekend, _weekdays);
+
+//2. Functions
+const add = function (...numbers) {
+  // console.log(numbers);
+  let sum = 0;
+  // console.log(numbers.length);
+  // console.log(numbers[0]);
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7);
+add(8, 2, 5, 3, 2, 1, 4);
+
 /* 
 ////////////////////////////////
 // The Spread Operator (...)
