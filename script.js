@@ -48,6 +48,23 @@ const restaurant = {
   },
 };
 
+// SPREAD, because on RIGHT side of =
+const arr = [1, 2, ...[3, 4]];
+
+//REST, because on LEFT side of =
+const [a, b, ...others] = [1, 2, 3, 4, 5];
+console.log(a, b, others);
+console.log(typeof a, typeof arr, typeof others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+/* 
+////////////////////////////////
+// The Spread Operator (...)
+
 const arr = [7, 8, 9];
 const badNewArray = [1, 2, arr[0], arr[1], arr[2]];
 console.log(badNewArray);
@@ -91,7 +108,7 @@ console.log(newRestaurant);
 const restaurantCopy = { ...restaurant };
 restaurantCopy.name = 'Ristorante Roma';
 console.log(restaurantCopy.name);
-console.log(restaurant.name);
+console.log(restaurant.name); */
 
 // Destructuring Objects
 /* 
