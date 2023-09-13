@@ -52,6 +52,25 @@ const restaurant = {
   },
 };
 
+//Looping arrays For of, entries
+
+const menu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(typeof menu, menu);
+
+for (const item of menu) console.log(item);
+
+// for (const item of menu.entries()) {
+//   console.log(`${item[0] + 1}: ${item[1]}`);
+// }
+
+for (const [i, el] of menu.entries()) {
+  console.log(`${i + 1}: ${el}`);
+}
+
+// console.log(menu.entries());
+// console.log([...menu.entries()]);
+
+//Coding Challenge #1//
 /* 
 Data Structures, Modern Operators and Strings
 Coding Challenge #1
@@ -82,7 +101,7 @@ operator.
 Test data for 6.: First, use players 'Davies', 'Muller', 'Lewandowski' and
  */
 
-const game = {
+/* const game = {
   team1: 'Bayern Munich',
   team2: 'Borrussia Dortmund',
   players: [
@@ -165,7 +184,7 @@ team1 < team2 && console.log('Team 1 is more likely to win');
 team1 > team2 && console.log('Team 2 is more likely to win');
 console.log(
   `${(team1 < team2 && game.team1) || game.team2} is more likely to win`
-);
+); */
 
 //Logical Assigment
 /* const rest1 = {
