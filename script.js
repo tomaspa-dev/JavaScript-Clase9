@@ -98,11 +98,10 @@ const game = {
 //
 // 1.Loop over the game.scored array and print each player name to the console,
 // along with the goal number (Example: "Goal 1: Lewandowski")
-const entries = Object.entries(game.scored);
 // console.log(entries);
 // console.log(game.scored.length);
-for (const [goal, player] of entries) {
-  console.log(`Goal${Number(goal) + 1}: ${player}`);
+for (const [goal, player] of game.scored.entries()) {
+  console.log(`Goal${goal + 1}: ${player}`);
 }
 
 //2 Use a loop to calculate the average odd and log it to the console (We already
@@ -115,8 +114,8 @@ let sum = 0;
 for (const i of values) {
   sum += i;
 }
-let prom = sum / values.length;
-console.log(prom);
+let average = sum / values.length;
+console.log(average);
 
 //3.
 // Print the 3 odds to the console, but in a nice formatted way, exactly like this:
@@ -135,6 +134,47 @@ for (const [i, el] of odds) {
   // console.log(i);
   console.log(`Odd of victory ${i === 'x' ? 'Draw' : i}: ${el}`);
 }
+
+//
+/* 
+4. Bonus: Create an object called 'scorers' which contains the names of the
+players who scored as properties, and the number of goals as the value. In this
+game, it will look like this:
+{
+Gnarby: 1,
+Hummels: 1,
+Lewandowski: 2
+}
+ */
+
+const scorers = {
+  Gnarby: 1,
+  Hummels: 1,
+  Lewandowski: 2,
+};
+
+const players = Object.values(game.scored);
+const teamScorers = new Set(players);
+const uniquePlayers = [...teamScorers];
+console.log(uniquePlayers);
+let goal = 0;
+
+let scorers2 = {};
+
+for (const scorer of game.scored) {
+  console.log(scorer);
+  scorers2[scorer] ? scorers2[scorer]++ : (scorers2[scorer] = 1);
+}
+
+// const scorersPlayers = filter(players);
+// console.log(scorersPlayers);
+/* for (let [i, el] of players) {
+  if (el === players[i]) {
+    console.log();
+  } else {
+    console.log();
+  }
+} */
 
 //Challenge 2 Start
 
