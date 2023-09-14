@@ -55,6 +55,28 @@ const restaurant = {
 };
 
 /////////////////////////////////////////////////////////////////////////////////
+//STRINGS I//
+
+const airline = 'TAP Air Portugal';
+const plane = 'A320';
+
+console.log(typeof plane);
+console.log(plane[0]);
+console.log(plane[1]);
+console.log(plane[2]);
+console.log('B737'[0]);
+
+console.log(airline.length);
+console.log('B737'.length);
+
+console.log(airline.indexOf('r'));
+console.log(airline.lastIndexOf('r'));
+console.log(airline.indexOf('portugal'));
+
+//STRINGS
+/////////////////////////////////////////////////////////////////////////////////
+
+/////////////////////////////////////////////////////////////////////////////////
 // Coding Challenge #3//////////////////////////////////////////////////////////
 // Let's continue with our football betting app! This time, we have a map called
 // 'gameEvents' (see below) with a log of the events that happened during the
@@ -72,7 +94,7 @@ const restaurant = {
 // [FIRST HALF] 17:
 // ⚽
 // GOAL
-
+/* 
 const gameEvents = new Map([
   [17, '⚽ GOAL'],
   [36, '🔁 Substitution'],
@@ -112,20 +134,20 @@ console.log(`An event happened, on average, every ${time / gameEvents.size}`);
 // whether it's in the first half or second half (after 45 min) of the game, like this:
 // [FIRST HALF] 17: ⚽ GOAL
 
-/* const minutes = [...gameEvents.keys()];
+const minutes = [...gameEvents.keys()];
 console.log(minutes);
 
-for (const min of minutes) {
-  min < 45
-    ? console.log(`[FIRST HALF] ${min} ${gameEvents.get(min)}`)
-    : console.log(`[SECOND HALF] ${min} ${gameEvents.get(min)}`);
-} */
+// for (const min of minutes) {
+//   min < 45
+//     ? console.log(`[FIRST HALF] ${min} ${gameEvents.get(min)}`)
+//     : console.log(`[SECOND HALF] ${min} ${gameEvents.get(min)}`);
+// }
 
 for (const [min, event] of gameEvents) {
   const half = min <= 45 ? 'FIRST' : 'SECOND';
   console.log(`${half} HALF ${min}: ${event}`);
 }
-
+ */
 // Coding Challenge #3///////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
 
