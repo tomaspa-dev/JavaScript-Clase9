@@ -104,21 +104,26 @@ console.log(gameEvents);
 // 3. Compute and log the following string to the console: "An event happened, on
 // average, every 9 minutes" (keep in mind that a game has 90 minutes)
 
-for (let min = 0; min <= 90; min += 9) {
-  console.log(`An event happened, on ${min}`);
-}
+const time = [...gameEvents.keys()].pop();
+console.log(time);
+console.log(`An event happened, on average, every ${time / gameEvents.size}`);
 
 // 4. Loop over 'gameEvents' and log each element to the console, marking
 // whether it's in the first half or second half (after 45 min) of the game, like this:
 // [FIRST HALF] 17: ⚽ GOAL
 
-const minutes = [...gameEvents.keys()];
+/* const minutes = [...gameEvents.keys()];
 console.log(minutes);
 
 for (const min of minutes) {
   min < 45
     ? console.log(`[FIRST HALF] ${min} ${gameEvents.get(min)}`)
     : console.log(`[SECOND HALF] ${min} ${gameEvents.get(min)}`);
+} */
+
+for (const [min, event] of gameEvents) {
+  const half = min <= 45 ? 'FIRST' : 'SECOND';
+  console.log(`${half} HALF ${min}: ${event}`);
 }
 
 // Coding Challenge #3///////////////////////////////////////////////////////////
