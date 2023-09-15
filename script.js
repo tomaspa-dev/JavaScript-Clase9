@@ -58,36 +58,34 @@ const restaurant = {
 /////////////////////////////////////////////////////////////////////////////////
 // Coding Challenge #4//////////////////////////////////////////////////////////
 
+// Create textarea and button elements and append them to the body
 document.body.append(document.createElement('textarea'));
 document.body.append(document.createElement('button'));
 
-const txt = document.querySelector('textarea');
+// Get references to the newly created elements
+const txtArea = document.querySelector('textarea');
 const btn = document.querySelector('button');
 
 btn.addEventListener('click', function () {
-  const cont = txt.value;
-  console.log(cont, typeof cont);
-  const normalizeTxt = cont.split('\n');
-  // console.log(normalizeTxt);
-  let [firstWord, lastWord] = [];
-  let newName = [];
+  const content = txtArea.value;
+  const words = content.split('\n');
+  // console.log(words);
+  let newWord = [];
 
   //1 lower Words. Split words by '_'
   //2 Capitalize first letter of the Second Word
   //3 Join Word
-  for (const word of normalizeTxt) {
-    [firstWord, lastWord] = word.toLowerCase().split('_');
-    newName.push(
-      [
-        firstWord,
-        lastWord.replace(lastWord[0], lastWord[0].toUpperCase()),
-      ].join('')
-    );
-    // console.log(newName);
-  }
-  console.log(newName);
-  for (let i = 0; i < newName.length; i++) {
-    console.log(`${newName[i]} ${'✅'.repeat(i + 1)}`);
+
+  // Refact with Function to format a word as desired
+  for (const [i, word] of words.entries()) {
+    // Create an array of formatted words
+    const [firstWord, lastWord] = word.toLowerCase().trim().split('_');
+    const formattedWord = `${firstWord}${lastWord.replace(
+      lastWord[0],
+      lastWord[0].toUpperCase()
+    )}`;
+
+    console.log(`${formattedWord.padEnd(20)}${'✅'.repeat(i + 1)}`);
   }
 });
 
@@ -105,11 +103,11 @@ btn.addEventListener('click', function () {
 // }
 // });
 
-//underscore_case
 //data
-// first_name;
+// underscore_case
+//  first_name;
 // Some_Variable;
-// calculate_AGE;
+//   calculate_AGE;
 // delayed_departure;
 
 /////////////////////////////////////////////////////////////////////////////////
