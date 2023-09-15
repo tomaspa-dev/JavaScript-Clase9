@@ -56,9 +56,102 @@ const restaurant = {
 };
 
 /////////////////////////////////////////////////////////////////////////////////
+// Coding Challenge #4//////////////////////////////////////////////////////////
+
+document.body.append(document.createElement('textarea'));
+document.body.append(document.createElement('button'));
+
+const txt = document.querySelector('textarea');
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', function () {
+  const cont = txt.value;
+  console.log(cont, typeof cont);
+  const normalizeTxt = cont.split('\n');
+  // console.log(normalizeTxt);
+  let [firstWord, lastWord] = [];
+  let newName = [];
+
+  //1 lower Words. Split words by '_'
+  //2 Capitalize first letter of the Second Word
+  //3 Join Word
+  for (const word of normalizeTxt) {
+    [firstWord, lastWord] = word.toLowerCase().split('_');
+    newName.push(
+      [
+        firstWord,
+        lastWord.replace(lastWord[0], lastWord[0].toUpperCase()),
+      ].join('')
+    );
+    // console.log(newName);
+  }
+  console.log(newName);
+  for (let i = 0; i < newName.length; i++) {
+    console.log(`${newName[i]} ${'✅'.repeat(i + 1)}`);
+  }
+});
+
+// for (const word of normalizeTxt) {
+//   //1 lower Words. Split words by '_'
+//   //2 Capitalize first letter of the Second Word
+//   //3 Join Word
+//   const [firstWord, lastWord] = word.toLowerCase().split('_');
+//   const newName = [
+//     firstWord,
+//     lastWord.replace(lastWord[0], lastWord[0].toUpperCase()),
+//   ].join('');
+//   // console.log(newName);
+//   console.log(`${newName[word]} ${'✅'.repeat(word)}`);
+// }
+// });
+
+//underscore_case
+//data
+// first_name;
+// Some_Variable;
+// calculate_AGE;
+// delayed_departure;
+
+/////////////////////////////////////////////////////////////////////////////////
+// Coding Challenge #4//////////////////////////////////////////////////////////
+/* 
+Coding Challenge #4
+Write a program that receives a list of variable names written in underscore_case
+and convert them to camelCase.
+
+The input will come from a textarea inserted into the DOM (see code below to
+insert the elements), and conversion will happen when the button is pressed.
+
+Test data (pasted to textarea, including spaces):
+underscore_case
+first_name
+Some_Variable
+calculate_AGE
+delayed_departure
+
+Should produce this output (5 separate console.log outputs):
+underscoreCase ✅
+firstName ✅✅
+someVariable ✅✅✅
+calculateAge ✅✅✅✅
+delayedDeparture ✅✅✅✅✅
+
+Hints:
+1 Remember which character defines a new line in the textarea 😉
+2 The solution only needs to work for a variable made out of 2 words, like a_b
+3 Start without worrying about the ✅. Tackle that only after you have the variable
+name conversion working 😉
+4 This challenge is difficult on purpose, so start watching the solution in case
+you're stuck. Then pause and continue!
+Afterwards, test with your own test data!
+ */
+
+///Coding Challenge #4////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////
 //STRINGS III//
 
 //Split and join
+/* 
 console.log('a+very+nice+string'.split('+'));
 console.log('Jonas Schmedtmann'.split(' '));
 
@@ -111,7 +204,7 @@ const planesInLine = function (n) {
 planesInLine(5);
 planesInLine(3);
 planesInLine(12);
-
+ */
 //STRINGS III//
 /////////////////////////////////////////////////////////////////////////////////
 /////////////////////////////////////////////////////////////////////////////////
